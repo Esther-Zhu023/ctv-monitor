@@ -1,0 +1,32 @@
+# CTV监控系统 - GitHub常用命令
+
+## 查看运行状态
+gh run list --repo Esther-Zhu023/ctv-monitor --limit 10
+
+## 手动触发监控
+gh workflow run "CTV Monitor" --repo Esther-Zhu023/ctv-monitor
+
+## 查看工作流状态
+gh workflow list --repo Esther-Zhu023/ctv-monitor
+
+## 查看特定运行详情
+gh run view <run-id> --repo Esther-Zhu023/ctv-monitor
+
+## 下载报告artifacts
+gh run download <run-id> --repo Esther-Zhu023/ctv-monitor
+
+## 查看实时日志
+gh run watch --repo Esther-Zhu023/ctv-monitor
+
+## 在浏览器中打开
+gh repo view --web Esther-Zhu023/ctv-monitor
+gh run view --web --repo Esther-Zhu023/ctv-monitor
+
+## 查看Actions设置
+gh action view --repo Esther-Zhu023/ctv-monitor
+
+## 禁用工作流
+gh workflow disable "CTV Monitor" --repo Esther-Zhu023/ctv-monitor
+
+## 启用工作流
+gh workflow enable "CTV Monitor" --repo Esther-Zhu023/ctv-monitor
