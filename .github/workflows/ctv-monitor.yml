@@ -1,0 +1,65 @@
+name: CTV Monitor
+
+on:
+  # 每天早上9:00 (UTC+8 = UTC+1) 运行
+  schedule:
+    - cron: '0 1 * * *'
+
+  # 手动触发
+  workflow_dispatch:
+
+  # 可选：推送时触发（测试用）
+  # push:
+  #   branches: [ main ]
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout代码
+        uses: actions/checkout@v4
+
+      - name: 设置Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: 安装依赖
+        run: |
+          pip install feedparser requests python-dateutil beautifulsoup4
+
+      - name: 创建日志目录
+        run: mkdir -p logs reports
+
+      - name: 运行CTV监控
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: python3 monitor.py
+
+      - name: 上传报告
+        uses: actions/upload-artifact@v4
+        with:
+          name: ctv-report-${{ github.run_number }}
+          path: reports/
+          retention-days: 30
+
+      - name: 上传日志
+        uses: actions/upload-artifact@v4
+        with:
+          name: ctv-logs-${{ github.run_number }}
+          path: logs/
+          retention-days: 7
+
+      - name: 生成摘要
+        run: |
+          echo "## CTV监控报告 📊" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**运行时间**: $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "**工作流编号**: ${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f "reports/latest_report.json" ]; then
+            echo "✅ 监控完成，报告已生成" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ 报告未生成" >> $GITHUB_STEP_SUMMARY
+          fi

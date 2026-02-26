@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  ctv-monitor:
+    build: .
+    container_name: ctv-monitor
+    volumes:
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+      - ./known_entities.json:/app/known_entities.json
+    environment:
+      - TZ=Asia/Shanghai
+      - CHECK_INTERVAL_HOURS=24
+    # Cron调度：每天早上9点运行
+    command: >
+      sh -c "
+        apt-get update && apt-get install -y cron &&
+        echo '0 9 * * * cd /app && python3 monitor.py >> /app/logs/cron.log 2>&1' > /etc/crontabs/root &&
+        cron -f
+      "
+    restart: unless-stopped

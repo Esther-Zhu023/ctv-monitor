@@ -1,0 +1,58 @@
+{
+  "timestamp": "2026-02-26T19:50:31.159771",
+  "summary": {
+    "total_articles": 2,
+    "companies_tracked": 0,
+    "changes_detected": 1,
+    "categories": {
+      "earnings": 1,
+      "general": 1
+    }
+  },
+  "important_changes": [
+    {
+      "type": "earnings",
+      "severity": "low",
+      "article": {
+        "source": "adexchanger",
+        "title": "CTV Fueled Magnite’s Q4 Growth As Display Falters",
+        "url": "https://www.adexchanger.com/tv/ctv-fueled-magnites-q4-growth-as-display-falters/",
+        "published": "2026-02-26T02:10:15",
+        "summary": "Display advertising is old and busted. Streaming CTV is the new hotness. Obviously, those aren’t the exact words Magnite CEO Michael Barrett used, but it’s pretty much what the numbers say.\nThe post CTV Fueled Magnite’s Q4 Growth As Display Falters appeared first on AdExchanger.",
+        "companies": [],
+        "categories": [
+          "earnings"
+        ]
+      },
+      "description": "财报信息: CTV Fueled Magnite’s Q4 Growth As Display Falters"
+    }
+  ],
+  "all_articles": [
+    {
+      "source": "adexchanger",
+      "title": "CTV Fueled Magnite’s Q4 Growth As Display Falters",
+      "url": "https://www.adexchanger.com/tv/ctv-fueled-magnites-q4-growth-as-display-falters/",
+      "published": "2026-02-26T02:10:15",
+      "summary": "Display advertising is old and busted. Streaming CTV is the new hotness. Obviously, those aren’t the exact words Magnite CEO Michael Barrett used, but it’s pretty much what the numbers say.\nThe post CTV Fueled Magnite’s Q4 Growth As Display Falters appeared first on AdExchanger.",
+      "companies": [],
+      "categories": [
+        "earnings"
+      ]
+    },
+    {
+      "source": "Google News ({'href': 'https://www.cynopsis.com', 'title': 'Cynopsis'})",
+      "title": "From Cart to Couch: How Retail Data Is Powering the Next Era of Premium Video - Cynopsis",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQUV8xTjRJWkNBWTVrT2pGc1QyLXRUOFFJRThkQWd1ckNqSS1LTUNPdENJMzV0UWxsd1c0ZUJ6TWJIejVFWlJqTzVjZFJ3dlVaNjd0YXFRYUlzcldsNWFGY0tYQWQ0NXpvSVBqRDc1bVNnWDJKWGl3eXdVemxjNjNCdjVWTmN4R3ZrMDVMZ1RBQ2JwT05NekRmaExrd0dzY2pOR2hkYnBQQWwycDd2eG1z?oc=5",
+      "published": "2026-02-25T21:22:14",
+      "summary": "",
+      "companies": [],
+      "categories": [
+        "general"
+      ]
+    }
+  ],
+  "top_sources": {
+    "adexchanger": 1,
+    "Google News ({'href': 'https://www.cynopsis.com', 'title': 'Cynopsis'})": 1
+  }
+}

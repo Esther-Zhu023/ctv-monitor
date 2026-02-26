@@ -1,0 +1,6 @@
+{
+  "news_api_key": "",
+  "enable_newsapi": false,
+  "check_interval_hours": 24,
+  "notes": "NewsAPI是可选的，免费版每天100次请求。如果不配置，系统会使用免费的Google News RSS和RSS feeds。"
+}
