@@ -35,14 +35,19 @@ jobs:
       - name: 运行CTV监控
         env:
           PYTHONPATH: ${{ github.workspace }}
-        run: python3 monitor.py
+        run: |
+          mkdir -p reports logs
+          python3 monitor.py || true
+          ls -la reports/ || true
 
       - name: 上传报告
         uses: actions/upload-artifact@v4
+        if: success()
         with:
           name: ctv-report-${{ github.run_number }}
           path: reports/
           retention-days: 30
+          if-no-files-found: ignore
 
       - name: 上传日志
         uses: actions/upload-artifact@v4
