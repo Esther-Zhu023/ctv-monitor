@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# CTV Monitor specific
+config.json
+logs/*.log
+reports/*.json
+!reports/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# Environment
+venv/
+env/
+ENV/
+logs/*.json
+reports/*.json
+!reports/.gitkeep
